@@ -1,0 +1,56 @@
+
+.box{
+    width:40%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:1px solid black;
+}
+.top{
+    width:100%;
+}
+.title{
+    float: left;
+    width: max-content;
+    border:1px solid black;
+    font-size: 24px;
+}
+.theme{
+    font-size: 12px;
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    width: max-content;
+    border:1px solid black;
+}
+.theme input{
+    width: 60px;
+}
+.display{
+    float: left;
+    width: 100%;
+    border:1px solid black;
+}
+/*numbers and functions*/
+.wrapNumButtons{
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+.numButtons{
+    flex: 1 0 calc(25% - 20px);
+    margin: 10px;
+}
+.otherButtons{
+    flex: 1 0 calc(50% - 20px);
+    margin: 10px;
+}
+/*radio buttons*/
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: rgb(255, 0, 106)!important;   /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color:rgb(0, 0, 0)!important; /*outer ring color change*/
+}
