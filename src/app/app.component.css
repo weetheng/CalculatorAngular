@@ -1,36 +1,134 @@
 
+/*color*/
+.theme1{
+    width:100%;
+    height:100%;
+    background-color:hsl(222, 26%, 31%);
+}
+.theme1 label, .theme1 p{
+    color: hsl(0, 0%, 100%);
+}
+.theme1 .display, .theme1 .wrapNumButtons{
+    background-color: hsl(224, 36%, 15%);
+}
+.theme1 .delButtons, .theme1 .resetButton{
+    background-color: hsl(225, 21%, 49%);
+    color: hsl(0, 0%, 100%);
+    border:0;
+    border-bottom: 3px solid hsl(224, 28%, 35%);
+}
+.theme1 .equalButton{
+    background-color: hsl(6, 63%, 50%);
+    color: hsl(0, 0%, 100%);
+    border:0;
+    border-bottom: 3px solid hsl(6, 70%, 34%);
+}
+.theme1 .numButtons{
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border:0;
+    border-bottom: 3px solid hsl(28, 16%, 65%);
+}
+
+.theme2{
+    width:100%;
+    height:100%;
+    background-color:hsl(0, 0%, 90%);
+}
+.theme2 label, .theme2 p{
+    color: hsl(0, 0%, 20%);
+}
+.theme2 .display, .theme2 .wrapNumButtons{
+    background-color: hsl(0, 0%, 93%);
+}
+.theme2 .delButtons, .theme2 .resetButton{
+    background-color: hsl(185, 42%, 37%);
+    color: hsl(0, 0%, 100%);;
+    border:0;
+    border-bottom: 3px solid hsl(185, 58%, 25%);
+}
+.theme2 .equalButton{
+    background-color: hsl(25, 98%, 40%);
+    color: hsl(0, 0%, 100%);
+    border:0;
+    border-bottom: 3px solid hsl(25, 99%, 27%);
+}
+.theme2 .numButtons{
+    background-color: hsl(30, 25%, 89%);
+    color: hsl(221, 14%, 31%);
+    border:0;
+    border-bottom: 3px solid hsl(28, 16%, 65%);
+}
+
+.theme3{
+    width:100%;
+    height:100%;
+    background-color:hsl(268, 75%, 9%);
+}
+.theme3 label, .theme3 p{
+    color: hsl(52, 100%, 62%);
+}
+.theme3 .display, .theme3 .wrapNumButtons{
+    background-color: hsl(268, 71%, 12%);
+}
+.theme3 .delButtons, .theme3 .resetButton{
+    background-color: hsl(281, 89%, 26%);
+    color: hsl(0, 0%, 100%);
+    border:0;
+    border-bottom: 3px solid hsl(285, 91%, 52%);
+}
+.theme3 .equalButton{
+    background-color: hsl(176, 100%, 44%);
+    color: hsl(198, 20%, 13%);
+    border:0;
+    border-bottom: 3px solid hsl(25, 99%, 27%);
+}
+.theme3 .numButtons{
+    background-color: hsl(268, 47%, 21%);
+    color: hsl(52, 100%, 62%);
+    border:0;
+    border-bottom: 3px solid hsl(290, 70%, 36%);
+}
+
+/*layout*/
 .box{
-    width:40%;
+    width:50%;
     position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    border:1px solid black;
+    font-family: "Spartan-Bold";
 }
 .top{
     width:100%;
+    
 }
 .title{
     float: left;
     width: max-content;
-    border:1px solid black;
-    font-size: 24px;
+    font-size: 26px;
+    padding-top: 4%;
 }
 .theme{
-    font-size: 12px;
+    font-size: 8px;
     float: right;
     margin-left: auto;
     margin-right: 0;
     width: max-content;
-    border:1px solid black;
+    
+}
+.theme td{
+    padding-right:5px;
 }
 .theme input{
     width: 60px;
 }
 .display{
     float: left;
-    width: 100%;
-    border:1px solid black;
+    width: 94%;
+    padding: 3%;
+    text-align: right;
+    margin-bottom: 3%;
 }
 /*numbers and functions*/
 .wrapNumButtons{
@@ -39,12 +137,25 @@
     flex-wrap: wrap;
 }
 .numButtons{
-    flex: 1 0 calc(25% - 20px);
+    flex: 1 0 calc(23% - 20px);
     margin: 10px;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 5px;
 }
-.otherButtons{
-    flex: 1 0 calc(50% - 20px);
+.delButtons{
+    flex: 1 0 calc(23% - 20px);
     margin: 10px;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+}
+.equalButton, .resetButton{
+    flex: 1 0 calc(45% - 20px);
+    margin: 10px;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-bottom: 5px;
 }
 /*radio buttons*/
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
@@ -53,4 +164,15 @@
 
 ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
 	border-color:rgb(0, 0, 0)!important; /*outer ring color change*/
+}
+
+@media screen and (max-width: 700px) {
+    .box{
+        width:90%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .box{
+        width:70%;
+    }
 }

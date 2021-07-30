@@ -1,54 +1,56 @@
-<!--box-->
-<div class="box">
-  <!--title and theme-->
-  <div class="top">
-    <div class = "title">
-      <label>calc</label>
+<div [ngClass]="{'theme1': themeValue == 1, 'theme2': themeValue == 2, 'theme3': themeValue == 3}">
+  <!--box-->
+  <div class="box">
+    <!--title and theme-->
+    <div class="top">
+      <div class = "title">
+        <label>calc</label>
+      </div>
+      <div class = "theme">
+        <table>
+          <tr>
+            <td rowspan="2"><label>THEME</label></td>
+            <td><label>1</label></td>
+            <td><label>2</label> </td>
+            <td><label>3</label></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <input type="range" min="1" max="3" [(ngModel)]="themeValue">
+            </td>
+            
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class = "theme">
-      <table>
-        <tr>
-          <td rowspan="2"><label>THEME</label></td>
-          <td>1</td>
-          <td>2  </td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <input type="range" min="1" max="3" value='1'>
-          </td>
-          
-        </tr>
-      </table>
-    </div>
-  </div>
 
-  <!--display panel-->
-  <div class="display">
-    <p>{{displayValue}}</p>
-  </div>
-  <div>
-    <!--buttons in 4x4-->
-    <div class="wrapNumButtons">
-      <button class = "numButtons">7</button>
-      <button class = "numButtons">8</button>
-      <button class = "numButtons">9</button>
-      <button class = "numButtons">DEL</button>
-      <button class = "numButtons">4</button>
-      <button class = "numButtons">5</button>
-      <button class = "numButtons">6</button>
-      <button class = "numButtons">+</button>
-      <button class = "numButtons">1</button>
-      <button class = "numButtons">2</button>
-      <button class = "numButtons">3</button>
-      <button class = "numButtons">-</button>
-      <button class = "numButtons">.</button>
-      <button class = "numButtons">0</button>
-      <button class = "numButtons">/</button>
-      <button class = "numButtons">x</button>
-      <button class="otherButtons">RESET</button>
-      <button class="otherButtons">=</button>
+    <!--display panel-->
+    <div class="display">
+      <p>{{displayValue}}</p>
     </div>
+    <div>
+      <!--buttons in 4x4-->
+      <div class="wrapNumButtons">
+        <button class = "numButtons" (click) = "updateDisplay('7')">7</button>
+        <button class = "numButtons" (click) = "updateDisplay('8')">8</button>
+        <button class = "numButtons" (click) = "updateDisplay('9')">9</button>
+        <button class = "delButtons" (click) = "deleteDisplayValue()">DEL</button>
+        <button class = "numButtons" (click) = "updateDisplay('4')">4</button>
+        <button class = "numButtons" (click) = "updateDisplay('5')">5</button>
+        <button class = "numButtons" (click) = "updateDisplay('6')">6</button>
+        <button class = "numButtons" (click) = "updateFunction('+')">+</button>
+        <button class = "numButtons" (click) = "updateDisplay('1')">1</button>
+        <button class = "numButtons" (click) = "updateDisplay('2')">2</button>
+        <button class = "numButtons" (click) = "updateDisplay('3')">3</button>
+        <button class = "numButtons" (click) = "updateFunction('-')">-</button>
+        <button class = "numButtons" (click) = "updateDisplay('.')">.</button>
+        <button class = "numButtons" (click) = "updateDisplay('0')">0</button>
+        <button class = "numButtons" (click) = "updateFunction('/')">/</button>
+        <button class = "numButtons" (click) = "updateFunction('*')">x</button>
+        <button class = "resetButton" (click) = "resetValues()">RESET</button>
+        <button class = "equalButton" (click) = "equalPressed()">=</button>
+      </div>
+    </div>
+    
   </div>
-  
 </div>
